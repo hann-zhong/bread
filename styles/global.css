@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;800&display=swap');
 
 * {
     font-family: Poppins;
@@ -69,13 +69,13 @@
 }
 
 .subhead {
-    line-height: 12px;
+    line-height: 15px;
     font-weight: 600;
     font-size: 18px;
 }
 
 .text {
-    line-height: 25px;
+    line-height: 20px;
     margin-right: 60px;
 }
 
@@ -121,4 +121,33 @@
 
 .text a:hover {
     background-size: 3px 50px;
+}
+
+.collapsible {
+    background-color: white;
+    color: rgb(34, 34, 34);
+    cursor: pointer;
+    width: 130px;
+    border: 3px solid black;
+    border-radius: 5px;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    font-weight: 500;
+}
+.collapsible:hover {
+    color: #77b612;
+    border-color: #77b612;
+}
+  
+.active, .collapsible:hover {
+    background-color: white;
+}
+  
+.content {
+    padding: 0 18px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    background-color: white;
 }

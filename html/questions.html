@@ -21,8 +21,11 @@
             <h2 class="topic-title">easy</h2>
             <p class="text">
                 <a href="https://leetcode.com/problems/valid-palindrome/" target="blank">valid palindrome↗︎</a>: 
-                given a string s, determine if it is a palindrome, 
-                considering only alphanumeric characters and ignoring cases. <br>i solved this using the two pointer approach. 
+                given a string s, determine if it is a palindrome, considering only alphanumeric characters and ignoring cases. <br> 
+            </p>
+            <button class="collapsible">my solution ▾</button>
+            <div class="content">
+                <p>i solved this using the two pointer approach. 
                 <br>time complexity: O(<i>n</i>) because we only need to traverse the string once; will access <i>n</i> elements. <br>space complexity: O(1) because we only require the two pointers.</p>
                 <p class="code" style="background-color: #ecfad8;">
                     def isPalindrome(self, str): <br>
@@ -41,13 +44,52 @@
                     &emsp; &emsp;else:<br>
                     &emsp;&emsp; &emsp;return False<br><br>
                     &emsp;return True<br>
-
                 </p>
+            </div>
         </div>
+        
 
         <div class="topic">
             <h2 class="topic-title">medium</h2>
-            <p>this is medium content</p>
+            <p class="text">
+                <a href="https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/" target="blank">find first and last position↗︎</a>: 
+                given an array of sorted integers, find the starting and ending position of a given target value in O(<i>log n</i>) time. <br> 
+            </p>
+            <button class="collapsible">my solution ▾</button>
+            <div class="content">
+                <p>i solved this using binary search: basically we search for the first and last occurrences of the target value. this is done by modifying the traditional binary search, as shown below.
+                <br>on a side note: "array of sorted integers" should indicate that binary search may be an option. 
+                <br>time complexity: O(<i>log n</i>), the search interval is being divided in half at every iteration. <br>space complexity: O(1) because we only need to store a constant amount of values.</p>
+                <p class="code" style="background-color: #ecfad8;">
+                    def searchRange(self, nums, target): <br>
+                    &emsp;start = end = -1 <br>
+                    &emsp;left = 0 <br>
+                    &emsp;right = len(nums) - 1 <br><br>
+                    &emsp;#find first occurrence <br>
+                    &emsp;while left <= right: <br>
+                    &emsp; &emsp;mid = (left + right) / 2 <br>
+                    &emsp; &emsp;if nums[mid] == target: <br>
+                    &emsp; &emsp; &emsp;start = mid <br>
+                    &emsp; &emsp; &emsp;right = mid - 1<br>
+                    &emsp; &emsp;elif nums[mid] < target: <br>
+                    &emsp; &emsp; &emsp;left = mid + 1<br>
+                    &emsp; &emsp;elif nums[mid] > target: <br>
+                    &emsp; &emsp; &emsp;right = mid - 1<br><br>
+                    &emsp;#find last occurrence <br>
+                    &emsp;left = 0 <br>
+                    &emsp;right = len(nums) - 1 <br><br>
+                    &emsp;while left <= right: <br>
+                    &emsp; &emsp;mid = (left + right) / 2 <br>
+                    &emsp; &emsp;if nums[mid] == target: <br>
+                    &emsp; &emsp; &emsp;end = mid <br>
+                    &emsp; &emsp; &emsp;left = mid + 1<br>
+                    &emsp; &emsp;elif nums[mid] < target: <br>
+                    &emsp; &emsp; &emsp;left = mid + 1<br>
+                    &emsp; &emsp;elif nums[mid] > target: <br>
+                    &emsp; &emsp; &emsp;right = mid - 1<br><br>
+                    &emsp;return [start, end]<br>
+                </p>
+            </div>
         </div>
 
         <div class="topic">
@@ -58,5 +100,22 @@
         <div class="nav">
             <a href="misc.html" style="float: left;">←5. multigrain</a>
         </div>
+
+        <script>
+            var coll = document.getElementsByClassName("collapsible");
+            var i;
+            
+            for (i = 0; i < coll.length; i++) {
+              coll[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.maxHeight){
+                  content.style.maxHeight = null;
+                } else {
+                  content.style.maxHeight = content.scrollHeight + "px";
+                } 
+              });
+            }
+        </script>
     </body>
 </html>

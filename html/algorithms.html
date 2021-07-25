@@ -19,7 +19,34 @@
 
         <div class="topic">
             <h2 class="topic-title">sort/search</h2>
-            <p>this is sort/search content</p>
+            <h4 class="subhead">binary search</h4>
+            <p class="text">useful to search for an element in a sorted array. binary search works by repeateadly halving the search interval; therefore, 
+                time complexity = O(<i>log n</i>).
+            </p>
+            <p class="code" style="background-color: #ede7fd">def binarySearch(arr, target): <br />
+                &emsp;left = 0<br>
+                &emsp;right = len(arr) - 1<br><br>
+                &emsp;while  left <= right:<br>
+                &emsp;&emsp;mid = (left + right) / 2<br>
+                &emsp;&emsp;if arr[mid] == target:<br>
+                &emsp;&emsp;&emsp;return mid <br>
+                &emsp;&emsp;elif arr[mid] < target:<br>
+                &emsp;&emsp;&emsp;left = mid + 1<br>
+                &emsp;&emsp;elif arr[mid] > target:<br>
+                &emsp;&emsp;&emsp;right = mid - 1
+            </p>
+
+            <h4 class="subhead">bubble sort</h4>
+            <p class="text">works by making multiple passes and swapping elements into the correct order. time complexity = O(<i>n^2</i>), in other words, not the jam at ALL.
+            </p>
+
+            <h4 class="subhead">selection sort</h4>
+
+            <h4 class="subhead">insertion sort</h4>
+
+            <h4 class="subhead">merge sort</h4>
+
+            <h4 class="subhead">quick sort</h4>
         </div>
 
         <div class="topic">
