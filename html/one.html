@@ -8,20 +8,33 @@
     </head>
 
     <body>
+        <div class="back-home banana-top">
+            <a href="../index.html">←0. back home</a>
+        </div>
+
         <div class="hero" style="margin-top: 19.5em;">
             <h1 class="hero-title">this is </h1>
             <h1 class="hero-title" style="color: #F8B400;">banana.</h1>
-            <p>banana focuses on introductory topics: string/array manipulation and linked lists.</p>
+            <p>banana focuses on introductory topics: strings, arrays, and linked lists.</p>
         </div>
 
         <div class="topic">
-            <h2 class="topic-title">strings</h2>
-            <p>this is strings content</p>
-        </div>
+            <h2 class="topic-title">strings and arrays</h2>
+            <h4 class="subhead">some useful notes</h4>
+            <p class="text">to access individual characters, index with positive and negative integers.</p>
+            <p class="code" style="background-color: #fff8e3">str = "hello" <br />
+                str[0] => h <br /> str[-1] => o <br />
+                //to return part of a string: str[x:y], not inclusive <br />
+                str[1:3] => el</p>
+            <br>
+            <p class="text">we can delimit strings with the split() function. setting the maxsplit param will return a list of maxsplit + 1 elements</p>
+            <p class="code" style="background-color: #fff8e3">split(regex, maxsplit) <br />//default regex is whitespace<br />
+                str = "new york!seattle!los angeles!chicago!boston" <br /> 
+                str.split("!") => ['new york', 'seattle', 'los angeles', 'chicago', 'boston'] <br />
+                str.split("!", 2) => ['new york', 'seattle', 'los angeles!chicago!boston']</p>
+            <br>
+            <p class="text">string and array questions can be handled with a similar approach most of the time.</p>
 
-        <div class="topic">
-            <h2 class="topic-title">arrays</h2>
-            <p>this is arrays content</p>
         </div>
 
         <div class="topic">

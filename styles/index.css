@@ -1,5 +1,6 @@
 .button:hover {
     background-color: #FF8264;
+    color: white;
 }
 
 .button-row {

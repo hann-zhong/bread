@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="icon" href="../favicon.png" />
+        <link rel="stylesheet" href="../styles/global.css">
+        <title>ciabatta</title>
+    </head>
+
+    <body>
+        <div class="back-home">
+            <a href="../index.html">←0. back home</a>
+        </div>
+        
+        <div class="hero" style="margin-top: 19.5em;">
+            <h1 class="hero-title">this is </h1>
+            <h1 class="hero-title" style="color: #b2dd6b;">ciabatta.</h1>
+            <p>ciabatta is a place for practice questions :)</p>
+        </div>
+
+        <div class="topic">
+            <h2 class="topic-title">easy</h2>
+            <p class="text">
+                <a href="https://leetcode.com/problems/valid-palindrome/" target="blank">valid palindrome↗︎</a>: 
+                given a string s, determine if it is a palindrome, 
+                considering only alphanumeric characters and ignoring cases. <br>i solved this using the two pointer approach. 
+                <br>time complexity: O(<i>n</i>) because we only need to traverse the string once; will access <i>n</i> elements. <br>space complexity: O(1) because we only require the two pointers.</p>
+                <p class="code" style="background-color: #ecfad8;">
+                    def isPalindrome(self, str): <br>
+                    &emsp;str = str.lower() <br>
+                    &emsp;l = len(str) <br>
+                    &emsp;p1 = 0 <br>
+                    &emsp;p2 = l - 1 <br>
+                    &emsp;while p1 < p2: <br>
+                    &emsp; &emsp;if str[p1].isalnum() == False: <br>
+                    &emsp; &emsp; &emsp;p1+=1 <br><br>
+                    &emsp; &emsp;elif str[p2].isalnum() == False: <br>
+                    &emsp; &emsp; &emsp;p2-=1<br><br>
+                    &emsp; &emsp;elif str[p1] == str[p2]: <br>
+                    &emsp; &emsp; &emsp;p1+=1<br>
+                    &emsp; &emsp; &emsp;p2-=1<br><br>
+                    &emsp; &emsp;else:<br>
+                    &emsp;&emsp; &emsp;return False<br><br>
+                    &emsp;return True<br>
+
+                </p>
+        </div>
+
+        <div class="topic">
+            <h2 class="topic-title">medium</h2>
+            <p>this is medium content</p>
+        </div>
+
+        <div class="topic">
+            <h2 class="topic-title">hard</h2>
+            <p>this is hard content</p>
+        </div>
+
+        <div class="nav">
+            <a href="misc.html" style="float: left;">←5. multigrain</a>
+        </div>
+    </body>
+</html>
