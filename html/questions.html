@@ -57,7 +57,7 @@
             </p>
             <button class="collapsible">my solution ▾</button>
             <div class="content">
-                <p>i solved this using binary search: basically we search for the first and last occurrences of the target value. this is done by modifying the traditional binary search, as shown below.
+                <p>i solved this using binary search: basically, we search for the first and last occurrences of the target value. this is done by modifying the traditional binary search, as shown below.
                 <br>on a side note: "array of sorted integers" should indicate that binary search may be an option. 
                 <br>time complexity: O(<i>log n</i>), the search interval is being divided in half at every iteration. <br>space complexity: O(1) because we only need to store a constant amount of values.</p>
                 <p class="code" style="background-color: #ecfad8;">
@@ -88,6 +88,36 @@
                     &emsp; &emsp;elif nums[mid] > target: <br>
                     &emsp; &emsp; &emsp;right = mid - 1<br><br>
                     &emsp;return [start, end]<br>
+                </p>
+            </div>
+
+            <p class="text">
+                <a href="https://leetcode.com/problems/sort-colors/" target="blank">sort colors↗︎</a>: 
+                given an array with colors (0, 1, 2), sort them in-place so that the same colors are adjacent to each other. <br> 
+            </p>
+            <button class="collapsible">my solution ▾</button>
+            <div class="content">
+                <p>there are many ways to solve this problem, but i decided to make two passes: first, count the number of 0's, 1's, and 2's; 
+                    second, overwrite the given array with the proper values in the proper place.
+                <br>other methods that i can think of include: two pointers, and merge/quick sort. 
+                <br>time complexity: two passes => <i>2n</i>, O(<i>n</i>) <br>space complexity: O(1) because we only need to store a constant amount of values.</p>
+                <p class="code" style="background-color: #ecfad8;">
+                    def sortColors(self, nums): <br>
+                    &emsp;red = white = blue = 0 <br>
+                    &emsp;for x in range(len(nums)): <br>
+                    &emsp;&emsp;if nums[x] == 0 <br>
+                    &emsp;&emsp;&emsp;red+=1 <br>
+                    &emsp;&emsp;if nums[x] == 1 <br>
+                    &emsp;&emsp;&emsp;white+=1 <br>
+                    &emsp;&emsp;if nums[x] == 2 <br>
+                    &emsp;&emsp;&emsp;blue+=1 <br><br>
+                    &emsp;&emsp;for x in range(red):<br>
+                    &emsp;&emsp;&emsp;nums[x] = 0 <br>
+                    &emsp;&emsp;for x in range(red, red + white):<br>
+                    &emsp;&emsp;&emsp;nums[x] = 1 <br>
+                    &emsp;&emsp;for x in range(red + white, len(nums)):<br>
+                    &emsp;&emsp;&emsp;nums[x] = 2 <br><br>
+                    &emsp;return nums<br>
                 </p>
             </div>
         </div>
